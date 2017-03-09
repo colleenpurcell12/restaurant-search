@@ -3,7 +3,7 @@ import starEmpty from '../../public/resources/graphics/star-empty.png'
 import starFull from '../../public/resources/graphics/stars-plain.png'
 
 export const ZeroStars = (
-                    <div className="ratings">
+                    <div className="ratings" id='0' >
                         <img className='stars' src={starEmpty} alt="greyed out star"/>
                         <img className='stars' src={starEmpty} alt="greyed out star"/>
                         <img className='stars' src={starEmpty} alt="greyed out star"/>
@@ -12,7 +12,7 @@ export const ZeroStars = (
                     </div>
                     );
 export const OneStar = ( 
-                    <div className="ratings">
+                    <div className="ratings" id='1' >
                         <img className='stars' src={starFull} alt="orange star"/>
                         <img className='stars' src={starEmpty} alt="greyed out star"/>
                         <img className='stars' src={starEmpty} alt="greyed out star"/>
@@ -21,7 +21,7 @@ export const OneStar = (
                     </div>
                     );
 export const TwoStars = (
-                    <div className="ratings">
+                    <div className="ratings" id='2' >
                         <img className='stars' src={starFull} alt="orange star"/>
                         <img className='stars' src={starFull} alt="orange star"/>
                         <img className='stars' src={starEmpty} alt="greyed out star"/>
@@ -30,7 +30,7 @@ export const TwoStars = (
                     </div>
                     );
 export const ThreeStars = (
-                    <div className="ratings">
+                    <div className="ratings" id='3' >
                         <img className='stars' src={starFull} alt="orange star"/>
                         <img className='stars' src={starFull} alt="orange star"/>
                         <img className='stars' src={starFull} alt="orange star"/>
@@ -39,7 +39,7 @@ export const ThreeStars = (
                     </div>
                     );
 export const FourStars = (
-                    <div className="ratings">
+                    <div className="ratings" id='4' >
                         <img className='stars' src={starFull} alt="orange star"/>
                         <img className='stars' src={starFull} alt="orange star"/>
                         <img className='stars' src={starFull} alt="orange star"/>
@@ -48,7 +48,7 @@ export const FourStars = (
                     </div>
                     );
 export const FiveStars = (
-		            <div className="ratings">
+		            <div className="ratings" id='5' >
 		                <img className='stars' src={starFull} alt="abc"/>
 		                <img className='stars' src={starFull} alt="abc"/>
 		                <img className='stars' src={starFull} alt="abc"/>

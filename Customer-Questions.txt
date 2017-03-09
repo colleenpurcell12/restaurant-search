@@ -1,0 +1,83 @@
+Question 1: 
+	
+	Hello,
+
+	I'm new to search engines, and there are a lot of concepts I'm not educated on. To make my onboarding smoother, it'd help if you could provide me with some definitions of the following concepts:
+
+	Records
+	Indexing
+
+	I'm also struggling with understanding what types of metrics would be useful to include in the "Custom Ranking."
+
+	Cheers, 
+	George
+
+~~~~
+Answer 1:
+
+	Hi George,
+
+	I would be happy to expand on those concepts and provide examples of useful Custom Ranking metrics.
+
+	Indexing is the process of grouping data into indices, which are collections of data. Each entry in an index is a record, much like a row in a table. And every record has the same set of attributes. For example, you can search a 'people' index for the records of those with a certain attribute.
+
+	Useful Custom Ranking metrics are generally numerical attributes that represent the popularity or importance of your records. Example attributes include ratings, number of views, and quantity of sales. In addition to the textual relevance based on end-user input, Algolia incorporates business relevance with these metrics to further prioritize results.
+
+	I hope that's helpful. Let me know if you have any more questions!
+
+	Best,
+	Colleen
+
+~~~~
+Question 2: 
+	
+	Hello,
+
+	Sorry to give you the kind of feedback that I know you do not want to hear, but I really hate the new dashboard design. Clearing and deleting indexes are now several clicks away. I am needing to use these features while iterating, so this is inconvenient.
+
+	Regards, 
+	Matt
+
+~~~~
+Answer 2:
+
+	Hi Matt,
+
+	I’m sorry to hear that you're finding the new dashboard to be a bit cumbersome. Have you tried using the API to update your data? It’s great for bulk or frequent editing of indices.
+
+	To clear an index, try using this code:
+		index.clear_index
+
+	To delete an index by name:
+		client.deleteIndex('indexName')
+
+	I hope that improves your work flow! Let me know if I can help with anything else. 
+
+	Best,
+	Colleen
+
+~~~~
+Question 3: 
+
+	Hi,
+
+	I'm looking to integrate Algolia in my website. Will this be a lot of development work for me? What's the high level process look like?
+
+	Regards, Leo
+
+~~~~
+Answer:
+
+	Hi Leo,
+
+	I would be happy to provide an overview of the integration process. Are you interested in integrating your website with an Algolia API, or are you seeking a platform integration? 
+
+	For integrations with an Algolia API, there are three quick steps once you’ve signed up for an account. The set up doesn't require more than ten lines of code. First, upload the data through the online dashboard or an API client. Next configure the relevance of your results by setting the searchable attributes, and choosing business metrics for ranking. Lastly, select an Algolia search library such as autocomplete or instant search to build the best UI and search experience. 
+
+	Let me know if you have any additional questions. I am more than willing to jump on a quick call and discuss the process further!
+
+	Best,
+	Colleen
+
+
+
