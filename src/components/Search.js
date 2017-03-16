@@ -15,7 +15,7 @@ let helper = algoliasearchHelper(client, indexName, {
 export default class Search extends Component {
     constructor() {
         super();
-        this.state = {  hits: [], numOfHits: 0, numResultsToShow: 4,
+        this.state = {  hits: [], numOfHits: 0, numResultsToShow: 4, speed: .0002,
                         nameTerm: '', cuisineTerm: '', restaurants: [], geoPosition: []
                     } 
         this.handleInputChange  = this.handleInputChange.bind(this);
@@ -29,15 +29,17 @@ export default class Search extends Component {
         // ** get user location
          navigator.geolocation.getCurrentPosition((position) => {
             let {latitude, longitude} = position.coords
+            console.log("User is at ",latitude,",", longitude)
             this.setState({ geoPosition: [latitude, longitude]})
             helper.setQueryParameter('aroundLatLng', `${latitude}, ${longitude}`)
         });        
+        // back up location set, before browser provides user's specific loc (could have been local variable)
         if(this.state.geoPosition.length===0){
             helper.setQueryParameter('aroundLatLng','37.786919, -122.397722') // ** Algolia SF office in SOMA
         }
 
         helper.on('result', (content) => {
-            this.setState({ hits: content.hits })
+            this.setState({ hits: content.hits,  speed: (content.processingTimeMS/1000) })
             var count = this.state.restaurants.length
             if(count===0 || this.state.nameTerm===''){count=content.hits.length}
             this.setState({numOfHits: count })
@@ -96,7 +98,7 @@ export default class Search extends Component {
         else { this.setState({ numResultsToShow: 4 }); }
     }
     render() {  
-        let { hits, numResultsToShow, numOfHits,  restaurants, cuisineTerm, nameTerm } = this.state;
+        let { hits, speed, numResultsToShow, numOfHits,  restaurants, cuisineTerm, nameTerm } = this.state;
        
         if(cuisineTerm===''){restaurants = hits }
         // ** else restaurants have already been saved as a filtered subset of the hits
@@ -190,7 +192,7 @@ export default class Search extends Component {
                         <div className="restaurant_list">
                             <div className="results_metrics">
                                 <div className="results_count">{numOfHits} results found </div>
-                                <div className="results_speed">in .0002 seconds 
+                                <div className="results_speed">in {speed} seconds 
                                     <p className="results_line">___________________________________________________</p>
                                 </div>
                             </div>
